@@ -2,13 +2,14 @@ import { blogContents } from '@/data/blogs';
 import { notFound } from 'next/navigation';
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function BlogPage({ params }: BlogPageProps) {
-  const blog = blogContents.find(b => b.id === params.id);
+export default async function BlogPage({ params }: BlogPageProps) {
+  const { id } = await params;
+  const blog = blogContents.find(b => b.id === id);
 
   if (!blog) {
     notFound();
@@ -29,4 +30,4 @@ export default function BlogPage({ params }: BlogPageProps) {
       <div dangerouslySetInnerHTML={{ __html: blog.content }} />
     </article>
   );
-} 
+}
