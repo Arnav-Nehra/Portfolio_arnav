@@ -11,7 +11,6 @@ import { AnimatedBeamDemo } from "@/components/Tools";
 export default function Home() {    
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-900 ">
-      <div><DockDemo></DockDemo></div>
       <div className="mt-28  justify-items-center"><Intoduction ></Intoduction></div>
       <div><ProjectHeading className="mt-20 mb-8 sm:mt-40" headingtitle="Skills" description={`I have a expertise in multiple libraries and frameworks,\n Here are some of them.`}/></div>
       <div><AnimatedBeamDemo/></div>
@@ -20,11 +19,6 @@ export default function Home() {
         <BoxRevealDemo></BoxRevealDemo>
         <DemoCard></DemoCard>
       </div>
-      <div>sdklml</div>
-      <div>sdklml</div>
-      <div>sdklml</div>
-      <div>sdklml</div>
-      <div>sdklml</div>
-    </div>  
+    </div>
   );
 }
