@@ -1,19 +1,22 @@
-import type { Metadata } from "next";
-import { Inter , Raleway } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next";
+import { Raleway, Open_Sans } from "next/font/google";
+
 import { cn } from "@/lib/utils";
-import { DockDemo } from "@/components/Navbar2";
 
-const raleway = Raleway({ 
-  subsets: ['latin'], 
-  variable: "--display-font"
-})
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
+  weight: ["400", "500", "600","700"],
+  style: ["normal", "italic"],
+});
 
-const inter = Inter({
-  subsets:['latin'],
-  variable:"--display-inter"
-})
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
 
 export const metadata: Metadata = {
   title: "Arnav Nehra",
@@ -29,21 +32,11 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning={true}
-        className={cn(
-          'min-h-screen bg-background  antialiased',
-          raleway.variable,
-        )}
+        className={cn(raleway.variable, "font-raleway")}
       >
-        <div className="min-h-screen bg-white dark:bg-zinc-900 ">
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange >
-            <DockDemo></DockDemo>
+        <div className="">
             {children}  
-          </ThemeProvider>
-          </div>
+        </div>
       </body>
     </html>
 
