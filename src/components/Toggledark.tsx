@@ -23,7 +23,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <Button
+    <Button className='cursor-pointer'
       variant="ghost"
       size="icon"
       onClick={toggleDarkMode}
