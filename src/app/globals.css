@@ -5,7 +5,9 @@
 
 @theme{
   --font-raleway: var(--font-raleway);
-  --font-open-sans: var(--font-open-sans)
+  --font-open-sans: var(--font-open-sans);
+  --color-darkOcean: #141E30;
+  --color-darkOcean2: #243B55
 };
 
 @layer base {
